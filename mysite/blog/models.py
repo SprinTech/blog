@@ -16,8 +16,8 @@ class Post(models.Model):
     slug = models.SlugField(max_length=250, unique_for_date="publish") # post that contains publish date and slug
     author = models.ForeignKey(User, on_delete=models.CASCADE, related_name="blog_posts")
     body = models.TextField()
-    publish = models.DateTimeField(auto_now_add=True)
-    created = models.DateTimeField(auto_now=True)
+    publish = models.DateTimeField(auto_now=True)
+    created = models.DateTimeField(auto_now_add=True)
     status = models.CharField(max_length=10,
                               choices=STATUS_CHOICES,
                               default="draft")
